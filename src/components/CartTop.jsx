@@ -1,8 +1,12 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 function CartTop() {
   return (
-    <div>CartTop</div>
+    <div>
+      <Link to="CartView">
+        <i className="fa fa-shopping-cart"></i>
+      </Link>
+    </div>
   )
 }
 

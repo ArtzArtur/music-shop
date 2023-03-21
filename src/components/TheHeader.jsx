@@ -1,7 +1,9 @@
 import React from 'react'
 function TheHeader() {
   return (
-    <div>Header</div>
+    <header>
+      <h1>Online Music Shop</h1>
+    </header>
   )
 }
 
