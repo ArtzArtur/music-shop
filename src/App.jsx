@@ -1,4 +1,3 @@
-import CartTop from "./components/CartTop"
 import TheHeader from "./components/TheHeader"
 import {Routes,Route} from 'react-router-dom'
 import CartView from './components/CartView'

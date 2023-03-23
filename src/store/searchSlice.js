@@ -34,7 +34,6 @@ export const searchSlice = createSlice({
       state.loading = false
       state.data = []
       state.error = action.error
-      console.log(action.error)
     })
   }
 })
