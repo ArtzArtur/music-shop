@@ -8,14 +8,19 @@ function SearchForm() {
   const [searchTitle,setSearchTitle] = useState()
   const dispatch = useDispatch()
   return (
-    <div>
-      Search form
-      <input type="text" onChange={(e)=>setSearchTitle(old=>old=e.target.value)}/>
-      <button onClick={()=>dispatch(handleSearch(searchTitle))}>Search</button>
+    <>
+    <form className='form' onSubmit={(e)=>{e.preventDefault()
+      dispatch(handleSearch(searchTitle))
+    }}>
+      <input 
+      placeholder='Album title or artist'
+      className='form_field' type="text" onChange={(e)=>setSearchTitle(old=>old=e.target.value)}/>
+      <button className='btn btn-submit'>Search</button>
+    </form>
       <div>
         <SearchResults />
       </div>
-    </div>
+      </>
   )
 }
 
