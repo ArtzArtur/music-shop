@@ -21,15 +21,22 @@ useEffect(()=>{
 
   return (
     <div>
-      <Link to="/">Back</Link>
+      <div className='return-link'>
+      <Link to="/">
+        <i className="fas fa-arrow-left"></i>
+      </Link>
+      </div>
       <div className='cart'>
         {cart ? cart.map((product,idx)=>
         <div className='cart_item' key={product.collectionId}>
+          <div className='cart_item_data'>
           <img src={product.artworkUrl100} alt="album image" />
-          <p className='cart_item_data cart_item_data-artist'>{product.artistName}</p>
-          <p className='cart_item_data cart_item_data-album'>{product.collectionName}</p>
-          <p className='cart_qty'>{product.qty}</p>
-          {product.collectionPrice > 0 ? <p className='cart_item-price'>{product.collectionPrice} $</p> : null}
+
+          <p>Artist: {product.artistName}</p>
+          <p>Album: {product.collectionName}</p>
+          <p className='cart_qty'>Quantity: {product.qty}</p>
+          {product.collectionPrice > 0 ? <p className='cart_item-price'>Unit price: {product.collectionPrice} $</p> : null}
+          </div>
           <div className='cart_buttons'>
             <button className='btn btn-qty' onClick={()=>dispatch(incrementQty(product.collectionId))}>+</button>
             <button className='btn btn-qty' onClick={()=>dispatch(decrementQty(product.collectionId))}>-</button>
@@ -38,9 +45,10 @@ useEffect(()=>{
         )
         : null}
       </div>
-      <div className='total'>
+      <div className='cart_total'>
         <p>Products quantity: {counter}</p>
         <p>Total to pay: {fullPrice > 0 ? fullPrice.toFixed(2) : 0} $</p>
+          <Link className='btn' to="/">Proceed to payment</Link>
       </div>
       </div>
 

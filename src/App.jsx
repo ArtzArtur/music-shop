@@ -2,6 +2,7 @@ import TheHeader from "./components/TheHeader"
 import {Routes,Route} from 'react-router-dom'
 import CartView from './components/CartView'
 import Home from "./components/Home"
+import TheFooter from "./components/TheFooter"
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="CartView" element={<CartView />} ></Route>
       </Routes>
+      <TheFooter />
     </div>
   )
 }

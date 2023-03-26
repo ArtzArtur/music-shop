@@ -22,8 +22,12 @@ $border:0px 0px 1px #000;
 html{
   scroll-behavior: smooth;
 }
-.app{
+.App{
+  min-height: 100vh;
+  min-height: 100dvh;
   position: relative;
+  display: grid;
+  grid-template-rows:auto 1fr auto;
 }
 .btn{
   border: none;
@@ -45,6 +49,14 @@ html{
       transform:scale(1.1)
     }
   }
+  &-qty{
+    margin:$xs;
+    border-radius:0;
+    width:30px;
+    height:30px;
+    font-size:$sm;
+    font-weight:800;
+  }
 }
 p{
 padding: $xs;
@@ -54,6 +66,11 @@ input{
   border: none;
   outline: none;
 }
+img{
+  display: block;
+  margin:0 auto;
+  padding: $xs;
+}
 .no_result,.loader{
   font-size: $md;
   padding: $xxl;
@@ -62,7 +79,7 @@ input{
 
 // TheHeader component
 
-header{
+header,.footer{
 padding: $lg;
 text-align: center;
 color:#fff;
@@ -131,7 +148,6 @@ background:linear-gradient(to right,$clr-main,$clr-hover);
   grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
   padding: $lg;
   &_item{
-    height:450px;
     display: grid;
     align-content: space-between;
     padding: $xs;
@@ -140,13 +156,49 @@ background:linear-gradient(to right,$clr-main,$clr-hover);
     & .container{
       display: grid;
     }
-    & img{
-      margin:0 auto;
-      padding: $xs;
-    }
     &_data{
       font-size: $sm;
       height:1fr;
+    }
+  }
+}
+// cart
+.return-link{
+  padding: $md;
+  & i{
+    font-size: $sm;
+  }
+}
+.cart{
+  max-width: 650px;
+  margin:0 auto;
+  &_item{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    background:darken(#fff,7.5%);
+    margin-bottom:$xs;
+    margin-inline:$xs;
+    &_data{
+      align-items:center;
+      display: grid;
+      grid-template-columns: repeat(5,minmax(0,1fr));
+    }
+    }
+  &_buttons{
+    display: flex;
+    justify-content: center;
+  }
+  &_total{
+    display: grid;
+    place-content: center;
+    margin-top:$md;
+    & p{
+      font-size: $sm;
+    }
+    & .btn{
+      margin:$sm;
+      padding: $xs;
     }
   }
 }
@@ -234,5 +286,15 @@ background:linear-gradient(to right,$clr-main,$clr-hover);
   }
   50% {
     transform: scale(1.5);
+  }
+}
+@media(max-width:650px){
+  .cart_item{
+    display: grid;
+    justify-content:center;
+  }
+  .cart_item_data{
+    display: flex;
+    flex-flow: column;
   }
 }
