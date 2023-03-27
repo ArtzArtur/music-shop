@@ -21,7 +21,7 @@ function CartView() {
   return (
     <div>
       <div className="return-link">
-        <Link to="/music-app/">
+        <Link to="/music-shop/">
           <i className="fas fa-arrow-left"></i>
         </Link>
       </div>

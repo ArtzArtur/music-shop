@@ -1,7 +1,7 @@
 // variables
 
 $clr-main:rgb(79, 159, 122);
-$clr-second:rgba(19, 62, 42, 0.912);
+$clr-second:rgba(41, 71, 57, 0.912);
 $clr-hover:rgba(6, 195, 107, 0.912);
 $xs:0.5rem;
 $sm:1.25rem;
@@ -40,7 +40,7 @@ html{
     cursor: pointer;
   }
   &-submit{
-    padding:calc($sm / 2);
+    padding:calc($sm - 5px);
     width:100px;
   }
   &-buy{
@@ -67,8 +67,8 @@ html{
   &-qty{
     margin:$xs;
     border-radius:0;
-    width:30px;
-    height:30px;
+    width:35px;
+    height:35px;
     font-size:$sm;
     font-weight:800;
   }
@@ -146,8 +146,8 @@ background:linear-gradient(to right,$clr-main,$clr-hover);
   font-size: $sm;
   background: $clr-second;
   color:#fff;
-  width:20px;
-  height:20px;
+  min-width:25px;
+  min-height:25px;
   top:0;
   left:50%;
   transform: translateX(-25%);
