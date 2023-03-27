@@ -17,13 +17,13 @@ export const searchSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(handleSearch.pending, (state, action) => {
       state.loading = true
+      state.noResults = null
       state.data = []
     })
     builder.addCase(handleSearch.fulfilled, (state, action) => {
       state.loading = false
       if (action.payload.results.length > 0) {
         state.error = null
-        state.noResults = null
         state.data = action.payload.results
       }
       else {

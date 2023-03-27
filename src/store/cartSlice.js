@@ -24,6 +24,9 @@ export const cartSlice = createSlice({
         state.cart[productIndex].qty++
       }
     },
+    handleRemove: (state,action) => {
+      state.cart = state.cart.filter(item => item.collectionId !== action.payload)
+    },
     decrementQty: (state, action) => {
       const productIndex = state.cart.findIndex(item => item.collectionId === action.payload)
       if (state.cart[productIndex].qty == 1) {
@@ -44,5 +47,5 @@ export const cartSlice = createSlice({
 })
 
 export default cartSlice.reducer
-export const { addToCart, incrementQty, decrementQty, qtyCounter } = cartSlice.actions
+export const { addToCart, incrementQty, decrementQty, qtyCounter,handleRemove } = cartSlice.actions
 

@@ -44,9 +44,24 @@ html{
     width:100px;
   }
   &-buy{
+    width:100px;
     padding:$sm;
     &:hover{
       transform:scale(1.1)
+    }
+  }
+  &-trash{
+    display: grid;
+    place-content: center;
+    background: #db1414;
+    margin:$xs;
+    border-radius:0;
+    width:30px;
+    height:30px;
+    font-size:$sm;
+    &:hover{
+    background: #9f3131;
+
     }
   }
   &-qty{
@@ -57,6 +72,23 @@ html{
     font-size:$sm;
     font-weight:800;
   }
+}
+.animate{
+  animation:fade 1s ease infinite;
+}
+@keyframes fade {
+  0%{opacity:1;}
+  50%{opacity:0.25;}
+  100%{opacity:1;}
+}
+.dot:nth-child(1){
+  animation-delay: 0.25s;
+}
+.dot:nth-child(2){
+  animation-delay: 0.5s;
+}
+.dot:nth-child(3){
+  animation-delay: 0.75s;
 }
 p{
 padding: $xs;
@@ -147,6 +179,9 @@ background:linear-gradient(to right,$clr-main,$clr-hover);
   place-content: center;
   grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
   padding: $lg;
+  &_buttons{
+    display: flex;
+  }
   &_item{
     display: grid;
     align-content: space-between;
