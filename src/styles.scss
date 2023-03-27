@@ -164,6 +164,7 @@ background:linear-gradient(to right,$clr-main,$clr-hover);
   display: grid;
   place-content: center;
   &_field{
+    text-align: center;
     margin:$sm;
     font-size:1.05rem;
     padding:$xs;

@@ -21,7 +21,7 @@ function CartView() {
   return (
     <div>
       <div className="return-link">
-        <Link to="/">
+        <Link to="/music-app/">
           <i className="fas fa-arrow-left"></i>
         </Link>
       </div>
@@ -67,7 +67,7 @@ function CartView() {
       <div className="cart_total">
         <p>Products quantity: {counter}</p>
         <p>Total to pay: {fullPrice > 0 ? fullPrice.toFixed(2) : 0} $</p>
-        <Link className="btn" to="/">
+        <Link className="btn" to="/music-shop/">
           Proceed to payment
         </Link>
       </div>
